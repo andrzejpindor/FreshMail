@@ -3,6 +3,13 @@
 Because the API client uses the HttpClient class whole solution is targeted to .NET Framework 4.5.
 All API client methods are asynchronous.
 
+## Installation
+FreshMail API Client is available as [nuget package](https://www.nuget.org/packages/FreshMail/).
+Simply install it using Package Manager from Visual Studio:
+```
+Install-Package FreshMail
+```
+
 ## Usage example
 
 First create configuration class:
