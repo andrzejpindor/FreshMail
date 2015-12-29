@@ -1,4 +1,8 @@
 # FreshMail
+##Prerequisities
+Because the API client uses the HttpClient class whole solution is targeted to .NET Framework 4.5.
+All API client methods are asynchronous.
+
 ## Usage example
 
 First create configuration class:
