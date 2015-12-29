@@ -11,13 +11,10 @@ First create configuration class:
 var configuration = new FreshMailConfiguration(new Uri("https://api.freshmail.com/rest/"), "API_KEY", "API_SIGN");
 ```
 
-Next - create FreshMailApiClient instance (of course register all types shown below in your IoC container):
+Next create FreshMailApiClient instance:
 
 ```
-FreshMailApiClient client =
-                new FreshMailApiClient(new RequestHandler(new HttpClientFactory(configuration),
-                    new SignProvider(configuration, new Sha1Provider()),
-                    new FreshmailJsonConverter()));
+FreshMailApiClient client = new FreshMailApiClient(configuration);
 ```
 
 And use as simple as:

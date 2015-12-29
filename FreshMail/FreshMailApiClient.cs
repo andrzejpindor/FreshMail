@@ -1,10 +1,22 @@
-﻿using FreshMail.Wrappers;
+﻿using FreshMail.Configuration;
+using FreshMail.Converters;
+using FreshMail.Request;
+using FreshMail.Security;
+using FreshMail.Wrappers;
 
 namespace FreshMail
 {
     public class FreshMailApiClient
     {
-        public FreshMailApiClient(RequestHandler requestHandler)
+        public FreshMailApiClient(IFreshMailConfiguration configuration)
+            : this(new RequestHandler(new HttpClientFactory(configuration),
+                new SignProvider(configuration, new Sha1Provider()),
+                new FreshmailJsonConverter()))
+        {
+
+        }
+
+        protected FreshMailApiClient(RequestHandler requestHandler)
         {
             Ping = new PingWrapper(requestHandler);
             Sms = new SmsWrapper(requestHandler);
