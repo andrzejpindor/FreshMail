@@ -24,13 +24,14 @@ namespace FreshMail
             SubscribersLists = new SubscribersListsWrapper(requestHandler);
             Subscribers = new SubscribersWrapper(requestHandler);
             Campaigns = new CampaignsWrapper(requestHandler);
+            TransactionMail = new TransactionMailWrapper(requestHandler);
         }
 
         public CampaignsWrapper Campaigns { get; set; }
 
         public PingWrapper Ping { get; }
 
-        public TransactionMailWrapper TransactinoMail { get; set; }
+        public TransactionMailWrapper TransactionMail { get; set; }
 
         public SmsWrapper Sms { get; }
 
