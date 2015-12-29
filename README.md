@@ -20,11 +20,11 @@ FreshMailApiClient client = new FreshMailApiClient(configuration);
 And use as simple as:
 
 ```
-Task<EmptyApiResponse> response = wrapper.Sms.Send(new SmsRequest("48123456789", "Visit our page", "example.com", SingleSettings.On));
+Task<EmptyApiResponse> response = client.Sms.Send(new SmsRequest("48123456789", "Visit our page", "example.com", SingleSettings.On));
 
 AddSubscriberRequest request = new AddSubscriberRequest("abcdefgh", "some@example.com", SubscriberStatus.PendingActivation);
 request.AddCustomField("extra_field", "some value");
-Task<EmptyApiResponse> response = wrapper.Subscribers.Add(request);
+Task<EmptyApiResponse> response = client.Subscribers.Add(request);
 ```
 
 ##Missing methods implementation
