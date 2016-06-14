@@ -8,9 +8,9 @@ namespace FreshMail.Models.Sms
         public string Msisdn { get; set; }
         [JsonProperty(PropertyName = "text")]
         public string Message { get; set; }
-        [JsonProperty(PropertyName = "From")]
+        [JsonProperty(PropertyName = "from")]
         public string From { get; set; }
-        [JsonProperty(PropertyName = "Single")]
+        [JsonProperty(PropertyName = "single")]
         public SingleSettings Single { get; set; }
         public SmsRequest(string msisdn, string message, string proName = null,
             SingleSettings singleSettings = SingleSettings.Off)
