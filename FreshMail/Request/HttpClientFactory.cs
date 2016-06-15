@@ -26,7 +26,10 @@ namespace FreshMail.Request
                 {
                     AutomaticDecompression = DecompressionMethods.GZip | DecompressionMethods.Deflate
                 })
-                { BaseAddress = _configuration.BaseAddress };
+                {
+                    BaseAddress = _configuration.BaseAddress,
+                    Timeout = _configuration.Timeout
+                };
 
             client.DefaultRequestHeaders.Add("X-Rest-ApiKey", _configuration.ApiKey);
             client.DefaultRequestHeaders.Add("X-Rest-ApiSign", sign);

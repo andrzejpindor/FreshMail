@@ -4,8 +4,9 @@ namespace FreshMail.Configuration
 {
     public interface IFreshMailConfiguration
     {
-        Uri BaseAddress { get;  }
-        string ApiKey { get;  }
-        string ApiSecret { get;  }
+        Uri BaseAddress { get; }
+        string ApiKey { get; }
+        string ApiSecret { get; }
+        TimeSpan Timeout { get; }
     }
 }
